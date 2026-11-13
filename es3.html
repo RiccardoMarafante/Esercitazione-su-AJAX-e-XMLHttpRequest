@@ -17,7 +17,7 @@
             const xhr = new XMLHttpRequest();
             xhr.onload = function () {
                 if (xhr.status === 200) {
-                    const dati = JSON.parse(xhr.responseText); // Uso di responseText per JSON
+                    const dati = JSON.parse(xhr.responseText);
                     let testo = "Dati da JSON:\n";
                     dati.forEach(s => testo += `- ${s.nome}: ${s.voto}\n`);
                     document.getElementById('output').textContent = testo;
@@ -31,7 +31,7 @@
             const xhr = new XMLHttpRequest();
             xhr.onload = function () {
                 if (xhr.status === 200) {
-                    const doc = xhr.responseXML; // Uso di responseXML (Document DOM)[cite: 4]
+                    const doc = xhr.responseXML;
                     if (!doc) {
                         document.getElementById('output').textContent = "Errore: responseXML è null (MIME type non corretto o XML non valido).";
                         return;
