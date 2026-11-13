@@ -70,6 +70,5 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // Caricamento iniziale
     fetchUsers();
 });
