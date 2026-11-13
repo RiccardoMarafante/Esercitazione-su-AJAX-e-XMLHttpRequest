@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <title>Es.2 - Callback onload</title>
+</head>
+<body>
+    <h1>Test onload e onerror</h1>
+    <button id="btn">Carica con onload</button>
+    <pre id="output"></pre>
+    <script>
+        document.getElementById('btn').addEventListener('click', function () {
+            const xhr = new XMLHttpRequest();
+            xhr.onload = function () {
+                if (xhr.status === 200) {
+                    document.getElementById('output').textContent = xhr.responseText;
+                } else {
+                    console.error('Errore HTTP:', xhr.status);
+                }
+            };
+            xhr.onerror = function () {
+                console.error('Errore di rete');
+            };
+            xhr.open('GET', 'dati.txt', true);
+            xhr.send();
+        });
+    </script>
+</body>
+</html>

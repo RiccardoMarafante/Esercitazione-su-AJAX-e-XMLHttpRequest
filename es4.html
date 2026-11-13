@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <title>Es.4 - Richiesta POST</title>
+</head>
+<body>
+    <h1>Test POST con XMLHttpRequest</h1>
+    <button id="btnPost">Invia Dati (POST)</button>
+    <pre id="output"></pre>
+
+    <script>
+        document.getElementById('btnPost').addEventListener('click', function () {
+            const xhr = new XMLHttpRequest();
+            
+            // 1. Apriamo la connessione in POST
+            xhr.open('POST', 'https://jsonplaceholder.typicode.com/posts', true);
+            
+            // 2. Impostiamo l'header per indicare che inviamo JSON
+            xhr.setRequestHeader('Content-Type', 'application/json;charset=UTF-8');
+            
+            // 3. Gestiamo la risposta con onload
+            xhr.onload = function () {
+                if (xhr.status === 201) {
+                    const rispostaObj = JSON.parse(xhr.responseText);
+                    console.log('Risposta server (Creato):', rispostaObj);
+                    
+                    // Stampiamo il risultato a schermo
+                    document.getElementById('output').textContent = 
+                        "Successo! Stato: " + xhr.status + "\n" +
+                        "Dati ricevuti dal server:\n" + JSON.stringify(rispostaObj, null, 2);
+                } else {
+                    console.error('Errore HTTP:', xhr.status);
+                    document.getElementById('output').textContent = 'Errore HTTP: ' + xhr.status;
+                }
+            };
+
+            xhr.onerror = function () {
+                console.error('Errore di rete');
+                document.getElementById('output').textContent = 'Errore di rete!';
+            };
+
+            // 4. Inviamo i dati convertiti in stringa JSON tramite send()
+            xhr.send(JSON.stringify({
+                title: 'Esercitazione XHR',
+                body: 'Contenuto inviato',
+                userId: 1
+            }));
+        });
+    </script>
+</body>
+</html>

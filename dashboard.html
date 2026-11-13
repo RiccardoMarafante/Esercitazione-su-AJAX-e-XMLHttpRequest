@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mini Dashboard Utenti - AJAX</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main class="container">
+        <h1>Mini Dashboard Utenti</h1>
+        <div class="search-box">
+            <input type="text" id="searchInput" placeholder="Cerca utente per nome...">
+            <button id="searchBtn">Cerca</button>
+        </div>
+        <div id="loading" class="hidden">Caricamento in corso...</div>
+        <div id="error" class="error hidden"></div>
+        <section id="output" class="grid-container"></section>
+    </main>
+    <script src="app.js"></script>
+</body>
+</html>

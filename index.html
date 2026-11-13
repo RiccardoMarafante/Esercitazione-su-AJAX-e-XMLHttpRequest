@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Esercitazione AJAX & XMLHttpRequest</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 700px;
+            margin: 40px auto;
+            padding: 20px;
+            background-color: #f4f6f8;
+            color: #333;
+        }
+        h1 { color: #0070f3; text-align: center; }
+        .card-list {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            margin-top: 30px;
+        }
+        .exercise-card {
+            background: white;
+            padding: 15px 20px;
+            border-radius: 6px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            text-decoration: none;
+            color: inherit;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .exercise-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+            border-left: 5px solid #0070f3;
+        }
+        .exercise-card h3 { margin: 0 0 5px 0; color: #0070f3; }
+        .exercise-card p { margin: 0; color: #666; font-size: 14px; }
+        .badge {
+            background: #e1effe;
+            color: #1e429f;
+            padding: 5px 10px;
+            border-radius: 4px;
+            font-size: 12px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <h1>Esercitazione AJAX & XMLHttpRequest</h1>
+    <p style="text-align: center;">Seleziona un esercizio o la dashboard finale da visualizzare:</p>
+
+    <div class="card-list">
+        <a href="es1.html" class="exercise-card">
+            <div>
+                <h3>Esercizio 1</h3>
+                <p>Primo contatto con XMLHttpRequest e onreadystatechange</p>
+            </div>
+            <span class="badge">Base</span>
+        </a>
+
+        <a href="es2.html" class="exercise-card">
+            <div>
+                <h3>Esercizio 2</h3>
+                <p>Uso corretto della callback moderna onload e onerror</p>
+            </div>
+            <span class="badge">Callback</span>
+        </a>
+
+        <a href="es3.html" class="exercise-card">
+            <div>
+                <h3>Esercizio 3</h3>
+                <p>Confronto tra responseText (JSON) e responseXML</p>
+            </div>
+            <span class="badge">Parsing</span>
+        </a>
+
+        <a href="es4.html" class="exercise-card">
+            <div>
+                <h3>Esercizio 4</h3>
+                <p>Invio di dati al server tramite metodo POST e JSON.stringify</p>
+            </div>
+            <span class="badge">POST</span>
+        </a>
+
+        <a href="dashboard.html" class="exercise-card" style="border-left: 5px solid #10b981;">
+            <div>
+                <h3 style="color: #10b981;">Progetto Finale</h3>
+                <p>Mini Dashboard Utenti con ricerca dinamica e API pubbliche</p>
+            </div>
+            <span class="badge" style="background: #d1fae5; color: #065f46;">Progetto</span>
+        </a>
+    </div>
+</body>
+</html>
